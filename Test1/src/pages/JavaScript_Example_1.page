@@ -1,0 +1,60 @@
+<apex:page id="page">
+    <apex:sectionHeader title="Script" subtitle="New Script"/>
+    <script>
+    	function show(){
+        	console.log('Testing');
+        }
+    	function display(){
+            var name=document.getElementById('page:fm2:pg:s1:sI1:Name').value;
+            var age=document.getElementById('page:fm2:pg:s1:sI2:Age').value;
+            // this we don't want to write here since suppose there are 1000 element then we need to write thousand ids
+            // var city=document.getElementById('page:fm2:pg:s2:sI1:City').value;
+            // var state=document.getElementById('page:fm2:pg:s2:sI2:State').value;
+            console.log('Name:' +name);
+            console.log('Age:' +age);
+            //  console.log('city:' +city);
+            // console.log('state:' +state);
+            
+            }
+    </script>
+    <apex:form id="fm1">
+        <apex:page >
+        
+            <apex:commandButton value="check"  oncomplete="show()"/>
+        </apex:page>
+    </apex:form>
+    <apex:form id="fm2">
+        <apex:commandButton value="Display" onclick="display()" reRender="fm2"/>
+        <apex:pageBlock id="pg">
+            <apex:pageBlockSection id="s1">
+                <apex:pageBlockSectionItem id="sI1">
+                    <apex:outputLabel value="Enter Name"/>
+                    <apex:inputText id="Name"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="sI2">
+                    <apex:outputLabel value="Enter Age"/>
+                    <apex:inputText id="Age"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <script>
+            function callMe(){
+                var city=document.getElementById('{!$Component.s2.sI1.City}').value;
+                var state=document.getElementById('{!$Component.s2.sI2.State}').value;
+                console.log(city);
+                console.log(state);
+            }
+            </script>
+            <!--  <apex:commandButton value="Call Me" oncomplete="callMe()"/>-->
+            <apex:pageBlockSection id="s2">
+                <apex:pageBlockSectionItem id="sI1">
+                    <apex:outputLabel value="Enter City"/>
+                    <apex:inputText id="City" onchange="callMe()"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="sI2">
+                    <apex:outputLabel value="Enter State"/>
+                    <apex:inputText id="State" onmouseover="callMe()"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

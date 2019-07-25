@@ -1,0 +1,15 @@
+<aura:component controller="ApexControllerInvoke">
+    <aura:attribute name="accounts" type="Account[]" />
+    <aura:handler name="init" value="{!this}" action="{!c.call}" />
+    <div class="table">
+        <table>
+    <aura:iteration items="{!v.accounts}" var="a" >
+        <h1>{!a.Name}&nbsp;&nbsp;&nbsp;{!a.Industry}&nbsp;&nbsp;&nbsp;{!a.Phone}&nbsp;&nbsp;&nbsp;</h1><br/>
+    </aura:iteration>
+            </table>
+    </div>
+        
+        
+    
+	
+</aura:component>

@@ -1,0 +1,7 @@
+<apex:page standardController="CO_Request_History__c" extensions="CO_Request_History_GetXml">
+    <apex:form >
+        <apex:commandButton value="GetXMl" action="{!getXML}"/>
+    </apex:form>
+    {!xmlString}
+    
+</apex:page>

@@ -1,0 +1,29 @@
+<apex:page controller="Action_Support_Industry">
+    <apex:sectionHeader title="Industry" subtitle="Account Industry"/>
+    <apex:form >
+        <apex:selectList size="1" value="{!selected}">
+            <apex:actionSupport event="onchange" action="{!showAccount}"/>
+            <apex:selectOptions value="{!indOption}">
+            </apex:selectOptions>
+        </apex:selectList><br/><br/><br/><br/>
+        <apex:pageblock title="Account">
+       
+        <apex:dataTable value="{!accounts}" var="a" cellpadding="10" frame="border" border="below" width="800"  >
+            <apex:column value="{!a.Name}" headerValue="Name"/>
+            <apex:column value="{!a.Industry}" headerValue="Industry"/>
+            <apex:column value="{!a.Rating}" headerValue="Rating"/>
+            <apex:column value="{!a.Phone}" headerValue="Phone"/>
+        </apex:dataTable>
+             </apex:pageblock>
+        
+        <apex:pageblock title="Contact">
+       
+        <apex:dataTable value="{!contacts}" var="c" cellpadding="10" frame="border" border="below" width="800" >
+            <apex:column value="{!c.firstName}" headerValue="First Name"/>
+            <apex:column value="{!c.lastName}" headerValue="Last Industry"/>
+
+        </apex:dataTable>
+             </apex:pageblock>
+        
+    </apex:form>
+</apex:page>

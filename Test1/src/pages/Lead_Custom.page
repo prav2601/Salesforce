@@ -1,0 +1,15 @@
+<apex:page >
+    <apex:sectionHeader title="Home" subtitle="Leads" help="/apex/pageBlock"/>
+    <apex:form >
+        <apex:pageBlock >
+       <apex:pageBlockSection columns="2">
+        <apex:pageBlock title="Recents Leads">
+            <apex:pageBlockButtons location="Top">
+                <apex:commandButton value="New"/>
+            </apex:pageBlockButtons>
+            
+        </apex:pageBlock>
+       </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

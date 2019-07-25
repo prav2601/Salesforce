@@ -1,0 +1,22 @@
+<apex:page controller="SOSL_Example">
+    <apex:sectionHeader title="SOSL Example" subtitle="New SOSL Learner"/>
+    <apex:pageBlock >
+        <c:SOSL_Component record="{!account}" field="{!accfield}"  ObjectName="Account"/>
+        <c:SOSL_Component record="{!contact}" field="{!confield}"  ObjectName="Contact"/>
+      <!--  <apex:pageBlockSection title="Account" collapsible="false">
+        <apex:pageBlockTable value="{!account}" var="a">
+            <apex:column value="{!a.Name}" headerValue="Name"/>
+            <apex:column value="{!a.Industry}" headerValue="Industry"/>
+            
+        </apex:pageBlockTable>
+            </apex:pageBlockSection><br/><br/>
+        <apex:pageBlockSection title="Contact" collapsible="false">
+         <apex:pageBlockTable value="{!contact}" var="c">
+            <apex:column value="{!c.firstName}" headerValue="First Name"/>
+            <apex:column value="{!c.lastName}" headerValue="Last Name"/>
+             <apex:column value="{!c.department}" headerValue="Department"/>
+            
+        </apex:pageBlockTable>
+            </apex:pageBlockSection>-->
+    </apex:pageBlock>
+</apex:page>

@@ -1,0 +1,25 @@
+<apex:page controller="Action_Support_Customer" id="page">
+    <apex:form id="fm">
+        <apex:outputPanel id="pan">
+            <apex:outputText value="Select Customer Id" ></apex:outputText> <br/><br/>
+            <apex:selectList size="1" value="{!selected}" >
+                
+                <apex:selectOptions value="{!custOptions}" /> 
+                <apex:actionSupport event="onchange"  action="{!paymentDetails}" reRender="fm" />
+            </apex:selectList><br/><br/>
+            <apex:outputText value="Payment Ids" ></apex:outputText> <br/><br/>
+            <apex:selectList size="1" value="{!paySelected}" >
+                
+                <apex:selectOptions value="{!payOptions}"></apex:selectOptions>
+                <apex:actionSupport event="onchange"  action="{!showPayment}" reRender="fm" />
+            </apex:selectList><br/><br/><br/>
+            <apex:dataTable value="{!payment}" var="p" rendered="{!flag}" cellpadding="20" width="400" >
+                <apex:column value="{!p.Name}" headerValue="PaymentId"/>
+                <apex:column value="{!p.Mode__c}" headerValue="Mode"/>
+                <apex:column value="{!p.Amount__c}" headerValue="Amount"/>
+            </apex:dataTable>
+        </apex:outputPanel>
+        
+        
+    </apex:form>
+</apex:page>

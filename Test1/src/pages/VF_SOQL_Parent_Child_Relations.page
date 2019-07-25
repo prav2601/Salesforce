@@ -1,0 +1,14 @@
+<apex:page controller="SOQL_Parent_Child_Relations">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockTable value="{!accounts}" var="A">
+                <apex:column value="{!A.Id}" headerValue="AccountID"/>
+                <apex:column value="{!A.Name}" headerValue="Name"/>
+                 <apex:column value="{!A.Type}" headerValue="Type"/>
+                 <apex:column value="{!A.Phone}" headerValue="Phone"/>
+                
+            </apex:pageBlockTable>
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

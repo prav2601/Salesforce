@@ -1,0 +1,36 @@
+<apex:page controller="Insert_Account_Data" >
+    <apex:sectionHeader title="Import CSV" subtitle="New CSV File"/>
+    <style>
+        .head td{
+        	width:200px;
+        }
+        .head {
+        	margin-top:20px;
+        }
+        	
+    </style>
+    <apex:form >
+    <table class="head">
+        <tr>
+            <td><b>Upload a csv file to save it content as Account record</b>
+            </td>&nbsp;&nbsp;
+            <td>
+                <apex:inputFile value="{!csvfile}" accept="csv" contentType="text/csv"/>
+            </td>
+        </tr>
+        <tr>
+            <td><apex:commandButton value="Upload" action="{!readFile}" />
+            </td>
+        </tr>
+        </table><br/><br/>
+        <apex:pageBlock rendered="{!flag}">
+            <apex:pageBlockTable value="{!listOfaccount}" var="a">
+                <apex:repeat value="{!listfieldValue}" var="acc">
+                <apex:column value="{!a[acc]}"/>
+                </apex:repeat>
+            </apex:pageBlockTable><br/><br/>
+            
+            <apex:commandButton value="Save" action="{!saveData}" />
+        </apex:pageBlock>
+        </apex:form>
+</apex:page>

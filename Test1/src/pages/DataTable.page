@@ -1,0 +1,77 @@
+<apex:page standardController="Contact" recordSetVar="items">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:commandButton value="New Contact"/>&nbsp;|&nbsp;
+            <apex:commandButton value="Add to Campaign"/><br/><br/>
+            <apex:dataTable value="{!items}" var="a" cellspacing="10" cellpadding="15" border="frame" width="500" rows="4" first="0" rules="rows">
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:inputCheckbox />
+                    </apex:facet>
+                    <apex:inputCheckbox />
+                </apex:column>
+                <apex:column headerValue="Action">&nbsp;&nbsp;&nbsp;
+                    <apex:commandLink value="Edit" action="{!URLFOR($Action.Contact.Edit,a.id)}"/>
+                </apex:column>
+                <apex:column value="{!a.Name}" headerValue="Name"/>
+                <apex:column value="{!a.Title}" headerValue="Title"/>
+                <apex:column value="{!a.Phone}" headerValue="Phone"/>
+            </apex:dataTable>
+            <apex:dataTable value="{!items}" var="a" cellspacing="10" cellpadding="15" border="frame" width="500" rows="4" first="4" rules="cols">
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:inputCheckbox />
+                    </apex:facet>
+                    <apex:inputCheckbox />
+                </apex:column>
+                <apex:column headerValue="Action">&nbsp;&nbsp;&nbsp;
+                    <apex:commandLink value="Edit" action="{!URLFOR($Action.Contact.Edit,a.id)}"/>
+                </apex:column>
+                <apex:column value="{!a.Name}" headerValue="Name"/>
+                <apex:column value="{!a.Title}" headerValue="Title"/>
+                <apex:column value="{!a.Phone}" headerValue="Phone"/>
+            </apex:dataTable>
+            <apex:dataTable value="{!items}" var="a" cellpadding="15" border="1" width="500" rows="4" first="8" >
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:inputCheckbox />
+                    </apex:facet>
+                    <apex:inputCheckbox />
+                </apex:column>
+                <apex:column headerValue="Action">&nbsp;&nbsp;&nbsp;
+                    <apex:commandLink value="Edit" action="{!URLFOR($Action.Contact.Edit,a.id)}"/>
+                </apex:column>
+                <apex:column value="{!a.Name}" headerValue="Name"/>
+                <apex:column value="{!a.Title}" headerValue="Title"/>
+                <apex:column value="{!a.Phone}" headerValue="Phone"/>
+            </apex:dataTable>
+            <style>
+                	.header{
+                	background:#808080;
+                }
+                .even{
+            	background:#c0c0c0;
+            }
+            .odd{
+            	background:white;
+            }
+            </style>
+            <apex:dataTable value="{!items}" var="a" cellspacing="10" cellpadding="15" border="1" width="500" rows="4" first="8" headerClass="header" rowClasses="odd,even">
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:inputCheckbox />
+                    </apex:facet>
+                    <apex:inputCheckbox />
+                </apex:column>
+                <apex:column headerValue="Action">&nbsp;&nbsp;&nbsp;
+                    <apex:commandLink value="Edit" action="{!URLFOR($Action.Contact.Edit,a.id)}"/>
+                </apex:column>
+                <apex:column value="{!a.Name}" headerValue="Name"/>
+                <apex:column value="{!a.Title}" headerValue="Title"/>
+                <apex:column value="{!a.Phone}" headerValue="Phone"/>
+            </apex:dataTable>
+            
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

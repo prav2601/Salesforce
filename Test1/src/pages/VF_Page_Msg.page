@@ -1,0 +1,27 @@
+<apex:page controller="Page_Message">
+    <apex:sectionHeader title="Page Message" subtitle="New Message"/>
+    <apex:form >
+    <apex:pageBlock title="New Form">
+        <apex:pageBlockButtons location="Top">
+            <apex:commandButton value="Submit" action="{!submit1}"/>
+        </apex:pageBlockButtons>
+        <apex:pageBlockSection >
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Name"/>
+                <apex:inputText value="{!name}"/>
+               
+            </apex:pageBlockSectionItem>
+             <apex:pageBlockSectionItem >
+                 <apex:outputLabel value="City"/>
+                <apex:inputText value="{!city}"/>
+               
+            </apex:pageBlockSectionItem>
+       
+        </apex:pageBlockSection>
+        
+         
+        
+    </apex:pageBlock>
+    <apex:pageMessages />
+    </apex:form>
+</apex:page>

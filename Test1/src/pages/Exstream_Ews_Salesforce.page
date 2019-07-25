@@ -1,0 +1,27 @@
+<apex:page controller="Exstream_EWS_Salesforce">
+    {!xmlString}&nbsp;<br/>
+    {!filterXML}<br/>
+    <apex:form >
+    <apex:pageBlock title="Generate pdf">
+        <apex:commandButton value="Generate XML" action="{!generateXML}"/>
+       <apex:commandButton value="Preview" action="{!callEngineService}" />
+        <apex:pageBlockSection >
+            <apex:pageBlockSectionItem >
+                <apex:inputText value="{!custName}"/>
+                <apex:inputText value="{!company}"/>
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+        </apex:form>
+    Engine Msg: {!engineMsg}<br/>
+    Output: {!output}
+    
+    <object 
+   	data="/servlet/servlet.FileDownload?file=0156F00000I3w8d"
+    width="100%"
+    style="height: 1000px; border: 1px solid grey;" 
+    type="application/pdf"
+    />
+    
+    
+</apex:page>

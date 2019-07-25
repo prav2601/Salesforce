@@ -1,0 +1,15 @@
+<apex:page controller="Retrieve_Leads_Data">
+    <apex:form >
+        <apex:pageBlock title="Lead">
+            <apex:pageBlockSection >
+               Email: <apex:inputText value="{!email}"/>
+               Company: <apex:inputText value="{!company}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockTable value="{!leads}" var="lead" >
+               <apex:column value="{!lead.Email}" headerValue="EMail" />
+                <apex:column value="{!lead.Company}" headerValue="Company" />
+            </apex:pageBlockTable>
+            <apex:commandButton value="submit" action="{!add}" />
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

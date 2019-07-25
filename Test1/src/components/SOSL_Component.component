@@ -1,0 +1,15 @@
+<apex:component >
+    <apex:attribute name="record" type="Sobject[]" description=" Object Type"/>
+    <apex:attribute name="field" type="String[]" description="Fields"/>
+    <apex:attribute name="ObjectName" type="String" description="Object Name"/>
+    <apex:pageBlock title="{!ObjectName}">
+   
+    <apex:pageBlockTable value="{!record}" var="a">
+        <apex:repeat value="{!field}" var="f" >
+        <apex:column value="{!a[f]}" />
+        </apex:repeat>
+        
+    </apex:pageBlockTable>
+         </apex:pageBlock>
+    
+</apex:component>

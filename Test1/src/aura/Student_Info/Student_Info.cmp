@@ -1,0 +1,5 @@
+<aura:component >
+    <c:Student_Component Name="Praveen" Age="30" branch="ECE" /><br/>
+    <c:Student_Add city="Azamgarh" place="Mukeriganj" state="UP"/>
+	
+</aura:component>

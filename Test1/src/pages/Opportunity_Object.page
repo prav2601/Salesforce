@@ -1,0 +1,64 @@
+<apex:page >
+    <apex:sectionHeader title="Opportunities" subtitle="Home" help="/apex/DataTable"/> <br/>
+    <style>
+        .background{
+        backgroud:#FFFFFF
+        }
+    </style>
+    <apex:form >
+        <apex:outputLabel value="View :" /> &nbsp;&nbsp;
+        <apex:selectList size="1">
+            <apex:selectOption itemLabel="All Opportunity" itemValue="All Opportunity"/>
+            <apex:selectOption itemLabel="Closing Next Month" itemValue="Closing Next Month"/>
+            <apex:selectOption itemLabel="Closing this Month" itemValue="Closing this Month"/>
+            <apex:selectOption itemLabel="New Last Week" itemValue="New Last Week"/>
+            <apex:selectOption itemLabel="New this Week" itemValue="New this Week"/>
+        </apex:selectList>&nbsp;&nbsp;
+        <apex:commandButton value="GO!"/>&nbsp;&nbsp;
+        <apex:commandLink value="Edit"/>&nbsp;|&nbsp;
+        <apex:commandLink value="Create New View"/><br/><br/>
+        <apex:pageBlock tabStyle="Opportunity" title="Recent Opportunities">
+            <apex:pageBlockButtons location="Top">
+                <apex:commandButton value="New"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection columns="3" collapsible="false">
+                <apex:outputLabel value="Opportunity Name" style="background"/>
+                <apex:outputLabel value="Account Name"/>
+                <apex:outputLabel value="Close Date"/>
+                <apex:outputLabel value="Edge Emergency Generator" />
+                <apex:outputLabel value="Edge Communication"/>
+                <apex:outputLabel value="10/11/2018"/><br/>
+            </apex:pageBlockSection>
+        
+        
+        <apex:pageBlockSection collapsible="false">
+            <apex:pageBlock title="Reports">
+                <apex:outputLabel value="Opportunity Pipeline"/><br/>
+                <apex:outputLabel value="Closed Opportunity"/><br/>
+                <apex:outputLabel value="Won Opportunity"/>
+            </apex:pageBlock>
+            <apex:pageBlock title="Quaterly Summary">
+            <apex:pageBlockSectionItem > 
+                <apex:outputLabel value="Interval : "/>&nbsp;&nbsp;
+                
+            </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem > 
+                <apex:selectList size="1">
+                    <apex:selectOption itemLabel="All Opportunity" itemValue="All Opportunity" />
+                    <apex:selectOption itemLabel="Closed Next Month" itemValue="Closed Next Month" />
+                    <apex:selectOption itemLabel="Closed New Month" itemValue="Closed New Month" />
+                    </apex:selectList>
+                
+            </apex:pageBlockSectionItem>
+            </apex:pageBlock>
+            <apex:pageBlock title="Tools">
+                <apex:outputLabel value="Sales"/><br/>
+               
+            </apex:pageBlock>
+        </apex:pageBlockSection>
+        
+        
+          </apex:pageBlock>  
+            
+    </apex:form>
+</apex:page>

@@ -1,0 +1,29 @@
+<apex:page controller="DML_Example_2">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:selectList value="{!selectedrating}" size="1">
+                <apex:selectOptions value="{!option1}">
+                </apex:selectOptions>
+            </apex:selectList>&nbsp;&nbsp;
+            <apex:commandButton value="Update Rating" action="{!updaterating}" reRender="pb" /> &nbsp;&nbsp;
+            <apex:selectList value="{!selectetindustry}" size="1">
+                <apex:selectOptions value="{!option2}">
+                </apex:selectOptions>
+            </apex:selectList>&nbsp;&nbsp;
+            <apex:commandButton value="Update Industry" action="{!updateindustry}" reRender="pb" /><br/><br/>
+            <apex:dataTable value="{!leadWrapperlist}" var="L" frame="box" cellpadding="10" width="900" id="pb">
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:inputCheckbox selected="{!L.selectHeader}"/>
+                    </apex:facet>
+                    <apex:inputCheckbox value="{!L.flag}"/>
+                </apex:column>
+             <apex:column value="{!L.newLead.LastName}"  headerValue="LastName" />
+            <apex:column value="{!L.newLead.FirstName}" headerValue="FirstName" />
+            <apex:column value="{!L.newLead.Rating}"  	headerValue="Rating" />
+            <apex:column value="{!L.newLead.Industry}"  headerValue="Industry" />
+            <apex:column value="{!L.newLead.LeadSource}"  headerValue="LeadSource" />
+            </apex:dataTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

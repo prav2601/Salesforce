@@ -1,0 +1,27 @@
+<apex:page controller="Co_Request_History">
+    <apex:sectionHeader title="CO Request History" subtitle="Home"/>
+    <apex:form id="pb">
+        <apex:outputLabel value="View :"/>&nbsp;&nbsp;
+            <apex:selectList size="1" value="{!option}">
+                <apex:selectOption itemLabel="--None--" itemValue="--None--"/>
+                <apex:selectOption itemLabel="All" itemValue="All"/>
+                <apex:selectOption itemLabel="Correspondence" itemValue="Correspondence"/>
+                <apex:actionSupport event="onchange" action="{!callCorrespondence}" reRender="pb"/>
+        </apex:selectList>&nbsp;&nbsp;&nbsp;
+        <apex:commandButton value="GO" action="{!go}" /><br/><br/>
+        
+        <apex:pageBlock rendered="{!flag1}">
+            <apex:pageBlockTable value="{!co_req_hist}" var="a" >
+                <apex:column headerValue="Case Number">
+                    <apex:outputLink value="/{!a.Id}">{!a.Case_Number__c}</apex:outputLink>
+                </apex:column>
+                    
+                 <apex:column value="{!a.CO_REQ_SEQ__c}" headerValue="CO REQ SEQ"/>
+                 <apex:column value="{!a.DOC_ID__c}" headerValue="DOC ID"/>
+                 <apex:column value="{!a.Indv_Id__c}" headerValue="Indv Id"/>
+            </apex:pageBlockTable>
+                
+        </apex:pageBlock>
+                                                         
+    </apex:form>
+</apex:page>

@@ -1,0 +1,32 @@
+<apex:page controller="Apex_Page_Form">
+    <apex:form >
+        <apex:pageBlock title="Project Form">
+            <apex:pageBlockButtons location="Top">
+                <apex:commandButton value="SetProject" action="{!setProject}" reRender="fm"/>
+                <apex:commandButton value="Reset" action="{!setReset}" reRender="fm"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection columns="1" id="fm">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Name"/>
+                    <apex:inputText value="{!name}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Id"/>
+                    <apex:inputText value="{!id}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Company"/>
+                    <apex:inputText value="{!company}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Skills"/>
+                    <apex:inputText value="{!skills}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Project"/>
+                    <apex:inputText value="{!project}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

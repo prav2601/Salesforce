@@ -1,0 +1,44 @@
+<apex:page controller="Apex_Account_Contact">
+    <apex:form >
+        <apex:pageBlock title="Acc_Cont" id="a">
+            <apex:pageBlockButtons location="Top">
+                <apex:commandButton value="Add Account" action="{!addaccount}" />
+                <apex:commandButton value="Add Contact" action="{!addcontact}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Account">
+                
+                Enter Name: <apex:inputText value="{!name}"/>
+                Enter Phone: <apex:inputText value="{!phone}"/>
+                Enter Rating: <apex:inputText value="{!rating}"/>
+                Enter Industry: <apex:inputText value="{!industry}"/>
+                    
+            </apex:pageBlockSection><br/>
+            <apex:pageBlockSection title="Contact">
+                
+                Enter FirstName: <apex:inputText value="{!firstName}"/>
+                Enter LastName: <apex:inputText value="{!lastName}"/>
+                Enter Email: <apex:inputText value="{!email}"/>
+               
+                    
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Account_Table" collapsible="false">
+                <apex:pageBlockTable value="{!accounts}" var="a">
+                    <apex:column value="{!a.name}" headerValue="Name"/>
+                    <apex:column value="{!a.phone}" headerValue="Phone"/>
+                    <apex:column value="{!a.rating}" headerValue="Rating"/>
+                    <apex:column value="{!a.industry}" headerValue="Industry"/>
+                </apex:pageBlockTable>
+                </apex:pageBlockSection>
+            <apex:pageBlockSection title="Contact_Table" collapsible="false">
+                <apex:pageBlockTable value="{!contact}" var="a">
+                    <apex:column value="{!a.firstName}" headerValue="FirstName"/>
+                    <apex:column value="{!a.lastName}" headerValue="LastName"/>
+                    <apex:column value="{!a.email}" headerValue="Email"/>
+                    
+                </apex:pageBlockTable>
+                </apex:pageBlockSection>
+            
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

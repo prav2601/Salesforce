@@ -1,0 +1,45 @@
+<apex:page >
+    <apex:sectionHeader title="Opportunities" subtitle="Home" help="/apex/Lead_new"/>
+    <apex:form >
+        <apex:outputLabel value="View :     " style="font-weight:800"/>
+        <apex:selectList size="1">
+            <apex:selectOption itemLabel="Opportunity" itemValue="Opportunity" />
+            <apex:selectOption itemLabel="Close Next Month" itemValue="Close Next Month" />
+            <apex:selectOption itemLabel="Closing Next Month" itemValue="Closing Next Month" />
+        </apex:selectList>
+        <apex:commandButton value="Go  "/>
+        
+        <apex:commandLink value="Edit|"/>&nbsp;
+        <apex:commandLink value="Create New View"/><br/><br/>
+        <apex:pageBlock title="Recent Opportunities" tabStyle="Lead">
+            <apex:pageBlockButtons location="Top" >
+                <apex:commandButton value="New"/>
+            </apex:pageBlockButtons>
+            <apex:selectList size="1" dir="LTR">
+                <apex:selectOption itemLabel="Recently Viewed" itemValue="Recently Viewed"/>
+                <apex:selectOption itemLabel="Recently Modified" itemValue="Recently Modified"/>
+                <apex:selectOption itemLabel="Recently Created" itemValue="Recently Created"/>
+            </apex:selectList>
+            <apex:outputLabel value="No recent Records. Click Go"/><br/><br/>
+        </apex:pageBlock>
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Reports"/>
+                    <apex:pageBlockSection columns="1">
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="A"/>
+                        </apex:pageBlockSectionItem>   
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="A"/>
+                        </apex:pageBlockSectionItem>    
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="A"/>
+                        </apex:pageBlockSectionItem>    
+                    </apex:pageBlockSection>
+                </apex:pageBlockSectionItem>
+              </apex:pageBlockSection>      
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

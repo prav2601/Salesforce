@@ -1,0 +1,27 @@
+<apex:page standardController="Opportunity" recordSetVar="items">
+    <apex:form >
+        <apex:pageBlock >
+        <!--    <apex:pageBlockButtons location="Top" dir="LTR">-->
+            <apex:commandButton value="New Opportunity"/><br/>
+        <!--	</apex:pageBlockButtons>-->
+            <apex:pageBlockTable value="{!items}" var="a" rows="6" >
+                <apex:column >
+                    <apex:facet name="header">
+                        	<apex:inputCheckbox />
+                    </apex:facet>
+                    <apex:inputCheckbox />
+                </apex:column>
+                <apex:column headerValue="Action" >
+                    <apex:commandLink value="Edit" action="{!URLFOR($Action.Opportunity.Edit,a.id)}"/>&nbsp;|&nbsp;
+                    <apex:commandLink value="Delete" action="{!URLFOR($Action.Opportunity.Delete,a.id)}"/>
+                </apex:column>
+                <apex:column value="{!a.Name}" headerValue="Opportunity Name"/>
+                <apex:column value="{!a.Probability}" headerValue="Probability"/>
+                <apex:column value="{!a.Amount}" headerValue="Amount"/>
+                <apex:column value="{!a.TotalOpportunityQuantity}" headerValue="Total"/>
+                <apex:column value="{!a.Type}" headerValue="Type"/>
+                
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

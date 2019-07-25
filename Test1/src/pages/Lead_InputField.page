@@ -1,0 +1,13 @@
+<apex:page standardController="Lead">
+    <apex:sectionHeader title="Lead" subtitle="New Lead" />
+    <apex:form >
+        <apex:pageBlock title="Lead">
+        	<apex:pageBlockSection >
+                <apex:inputField value="{!Lead.Name}"/>
+                <apex:inputField value="{!Lead.OwnerId}" />
+               <!--<apex:inputField value="{!Lead.Campaign}" />-->
+                
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

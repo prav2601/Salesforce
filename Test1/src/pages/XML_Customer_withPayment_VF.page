@@ -1,0 +1,3 @@
+<apex:page controller="XML_Customer_withPayment" >
+    {!xmlString}
+</apex:page>

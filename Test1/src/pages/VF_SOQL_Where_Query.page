@@ -1,0 +1,19 @@
+<apex:page controller="SOQL_Where_Query">
+    <apex:form >
+        {!query}
+        <apex:pageBlock >
+            
+                Enter Name:   <apex:inputText value="{!accName}"/> <br/><br/>
+            Enter Industry: <apex:inputText value="{!accIndustry}"/> <br/><br/>
+            
+            <apex:pageBlockTable value="{!accounts}" var="A">
+                <apex:column value="{!A.Name}" headerValue="Name"/>
+                <apex:column value="{!A.Industry}" headerValue="Industry"/>
+                
+            </apex:pageBlockTable>
+        <apex:pageBlockButtons location="Bottom">
+            <apex:commandButton value="Populate" action="{!populateData}"/><br/><br/>
+            </apex:pageBlockButtons><br/><br/>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

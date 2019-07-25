@@ -1,0 +1,17 @@
+<apex:page controller="Apex_List" >
+    <apex:form >
+        <apex:pageBlock title="ListTest">
+        <apex:pageBlockButtons location="Top">
+            <apex:commandButton value="Add" action="{!add}" />
+            <apex:commandButton value="Reset" action="{!reset}" />
+        </apex:pageBlockButtons>
+            <apex:pageBlockSection >
+                <apex:pageBlockTable value="{!names}" var="q">
+                    <apex:column value="{!q}" headerValue="Name"/>
+                    
+                </apex:pageBlockTable>
+                                     
+            </apex:pageBlockSection>
+            </apex:pageBlock>
+    </apex:form>
+</apex:page>

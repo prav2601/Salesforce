@@ -1,0 +1,11 @@
+<apex:page controller="SOQL_PIckLIst_CLosedWON">
+    <apex:form >
+        <apex:pageBlock title="Closed Won">
+           <apex:pageBlockTable value="{!opty}" var="repeat">
+			<apex:column value="{!repeat.stageName}"/>   
+            <apex:column value="{!repeat.Name}"/> 
+            <apex:column value="{!repeat.Amount}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

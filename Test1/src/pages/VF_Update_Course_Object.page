@@ -1,0 +1,18 @@
+<apex:page controller="Update_Course_Object">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:commandButton value="Delete" action="{!deleteRecord}"/>
+            <apex:dataTable value="{!courseList}" var="recordValue" border="box" cellpadding="10" rules="rows" width="900">
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:inputCheckbox value="{!selectHeader}"/>
+                    </apex:facet>
+                    <apex:inputCheckbox value="{!recordValue.flag}" />
+                </apex:column>
+                <apex:column headerValue="Course Name" value="{!recordValue.course.Course_Name__c}"/>
+                <apex:column headerValue="Course Closing Date" value="{!recordValue.course.Course_Closing_Date__c}"/>
+                <apex:column headerValue="Course Intake Stage" value="{!recordValue.course.Course_Intake_Stage__c}"/>
+            </apex:dataTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

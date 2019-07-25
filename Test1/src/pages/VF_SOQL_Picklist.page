@@ -1,0 +1,23 @@
+<apex:page controller="SOQL_Picklist" >
+    <apex:form >
+        <apex:pageBlock title="Picklist" id="A">
+        <apex:selectList value="{!noOfRecords}" size="1" >
+            <apex:actionSupport event="onchange"  action="{!DataRepeat}" reRender="A"/>
+            <apex:selectOption itemLabel="--All--" itemValue="500000" />
+            <apex:selectOption itemLabel="--None--" itemValue="0"/>
+            <apex:selectOption itemLabel="5" itemValue="5"/>
+            <apex:selectOption itemLabel="6" itemValue="6"/>
+            <apex:selectOption itemLabel="9" itemValue="9"/>
+        </apex:selectList>
+    
+        
+        <apex:pageBlockTable value="{!account}" var="repeat">
+         
+            <apex:column value="{!repeat.Name}"/>
+            <apex:column value="{!repeat.Phone}"/>
+            
+        </apex:pageBlockTable>
+
+    </apex:pageBlock>
+        </apex:form>
+</apex:page>

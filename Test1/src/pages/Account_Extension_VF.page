@@ -1,0 +1,23 @@
+<apex:page standardController="Account" extensions="Account_Extension">
+    <apex:form >
+    <apex:sectionHeader title="Account" subtitle="New Contact"/>
+    <apex:pageBlock >
+        <apex:pageBlockButtons location="Top">
+            <apex:commandButton value="SendEmail" action="{!sendEmail}"/>
+        </apex:pageBlockButtons>
+        <apex:pageBlockSection title="Account" collapsible="false">
+            <apex:inputText value="{!acc.Name}"/>
+            <apex:inputText value="{!acc.Phone}"/>
+            <apex:inputText value="{!acc.Industry}"/>
+            <apex:inputText value="{!acc.Rating}"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="Contacts" collapsible="false">
+            <apex:repeat value="{!conList}" var="con">
+                <apex:inputText value="{!con.firstName}"/>
+            <apex:inputText value="{!con.Email}"/>
+           
+            </apex:repeat>
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

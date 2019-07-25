@@ -1,0 +1,18 @@
+<apex:page controller="Schema_Example1">
+    <apex:sectionHeader title="Schema" subtitle="Schema_Example_1"/>
+    <apex:form >
+    
+    <apex:pageBlock >
+   <apex:commandButton value="FieldName" action="{!getField}"/>
+    <apex:dataTable value="{!resMap}" var="a" cellpadding="10" >
+        <apex:column value="{!a}" headerValue="Key"/>
+            <apex:column value="{!resMap[a]}" headerValue="Properties"/>
+        
+    </apex:dataTable>
+        <apex:dataTable value="{!fieldName}" var="a" cellpadding="10" >
+        <apex:column value="{!a}" headerValue="Key"/>
+        
+    </apex:dataTable>
+         </apex:pageBlock>
+        </apex:form>
+</apex:page>

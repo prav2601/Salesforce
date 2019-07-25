@@ -1,0 +1,8 @@
+<apex:page >
+    <apex:sectionHeader title="Student" subtitle="New Student" help="/apex/SectionHeader"/>
+    <apex:pageBlock title="Student" helpTitle="New Help?" helpUrl="/apex/SectionHeader" tabStyle="Application__C">
+        Student Name: <br/>
+        Student Age:  <br/>
+        Student Area:
+    </apex:pageBlock>
+</apex:page>

@@ -1,0 +1,9 @@
+<aura:component >
+    <aura:attribute name="name" type="String"/>
+    <aura:attribute name="age" type="Integer"/>
+    <aura:attribute name="city" type="String"/>
+    <aura:attribute name="place" type="String"/>
+    <c:Child1 name="{!v.name}" age="{!v.age}"/>
+    <c:Child2 city="{!v.city}" place="{!v.place}"/>
+	
+</aura:component>

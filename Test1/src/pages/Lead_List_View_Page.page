@@ -1,0 +1,19 @@
+<apex:page standardController="Lead" recordSetVar="lead" >
+    <apex:sectionHeader >
+    <apex:form >
+        
+        <apex:outputLabel value="View"/>&nbsp;&nbsp;
+            <apex:selectList size="1">
+               <apex:selectOption itemLabel="All Open Leads" itemValue="All Open Leads" />
+                <apex:selectOption itemLabel="My Unread Leads" itemValue="My Unread Leads" />
+                <apex:selectOption itemLabel="Today's Leads" itemValue="Today's Leads" />
+            </apex:selectList>&nbsp;&nbsp;
+            
+        <apex:commandButton value="GO"/><br/><br/>
+       
+    </apex:form>
+        </apex:sectionHeader>
+    <apex:pageBlock >
+        
+    </apex:pageBlock>
+</apex:page>

@@ -1,0 +1,21 @@
+<apex:page standardController="VFobject__c" >
+    <apex:sectionHeader title="Style" subtitle="{!VFobject__c.ID}" help="apex/InlineBlock"/>
+    <apex:form >
+        <apex:pageBlock title="{!VFobject__c.ID}">
+        	
+        		<apex:pageBlockButtons location="Top">
+                    <apex:commandButton value="Save" action="{!save}"/>
+                    <apex:commandButton value="QuickSave" action="{!quicksave}"/>
+            		<apex:commandButton value="Edit" action="{!edit}"/>
+            		<apex:commandButton value="Delete" action="{!delete}"/>
+            		<apex:commandButton value="Cancel" action="{!cancel}"/>
+        		</apex:pageBlockButtons>
+        	<apex:pageBlockSection >
+            	<apex:inputField value="{!VFobject__c.AccountType__c}"/>
+            	<apex:inputField value="{!VFobject__c.Email__c}"/>
+            	<apex:inputField value="{!VFobject__c.Style__c}"/>
+            	<apex:inputField value="{!VFobject__c.Variety__c}"/>
+            </apex:pageBlockSection>
+    	</apex:pageBlock>
+	</apex:form>
+</apex:page>

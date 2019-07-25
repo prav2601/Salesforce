@@ -1,0 +1,7 @@
+<aura:component >
+    <aura:attribute name="acc" type="Account"/>
+    <aura:handler event="c:Event_application_level" action="{!c.callMe}"/>
+    <lightning:input label="Account Name" value="{!acc.Name}"/><br/>
+    <lightning:input label="Account Phone" value="{!acc.Phone}"/><br/>
+    <lightning:input label="Account Industry" value="{!acc.Industry}"/>	
+</aura:component>

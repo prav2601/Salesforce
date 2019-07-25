@@ -1,0 +1,42 @@
+<apex:page >
+    <apex:form >
+    	<apex:pageBlock title="Example">
+        	<apex:pageBlockSection title="Section-1" >
+                Last Name : <br/>
+                First Name :<br/>
+            
+            </apex:pageBlockSection>
+          	<apex:pageBlockSection title="Section-2" collapsible="false">
+                Last Name : <br/>
+                First Name :<br/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Section-3" columns="2" collapsible="false" >
+                <apex:outputLabel value="Enter Name" />
+                <apex:inputText />
+                <apex:outputLabel value="Enter Age" />
+                <apex:inputText />
+            
+            </apex:pageBlockSection>
+             <apex:pageBlockSection title="Section-4" columns="4" collapsible="false" >
+                <apex:outputLabel value="Enter Name" />
+                <apex:inputText />
+                <apex:outputLabel value="Enter Age" />
+                <apex:inputText />
+            
+            </apex:pageBlockSection>
+             <apex:pageBlockSection title="Section-4"  collapsible="false" >
+               <apex:pageBlock title="CustomerReports">
+                   Testing  <br/>
+                   	Testing <br/>
+                   	Testing <br/>
+               </apex:pageBlock>
+                <apex:pageBlock title="Monthly Report">
+                   Testing  <br/>
+                   	Testing <br/>
+                   	Testing <br/>
+               </apex:pageBlock>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    
+    </apex:form>
+</apex:page>

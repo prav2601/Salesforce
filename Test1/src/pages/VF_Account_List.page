@@ -1,0 +1,10 @@
+<apex:page controller="Account_List">
+    <apex:form >
+        <apex:PageBlock >
+            <apex:pageBlockTable value="{!accounts}" var="A">
+                <apex:column value="{!A.Name}" headerValue="Name"/>
+                <apex:column value="{!A.Phone}" headerValue="Phone"/>
+            </apex:pageBlockTable>
+        </apex:PageBlock>
+    </apex:form>
+</apex:page>

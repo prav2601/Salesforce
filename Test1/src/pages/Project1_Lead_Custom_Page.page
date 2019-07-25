@@ -1,0 +1,59 @@
+<apex:page standardController="Lead" extensions="Project1_Lead_Custom_Page" showHeader="true" sidebar="true">
+    <apex:sectionHeader title="Lead Edit" subtitle="New Lead"/>
+    <apex:form >
+    
+    <apex:pageBlock title="Lead Edit" tabStyle="Lead">
+        <apex:pageBlockButtons location="Top">
+            <apex:commandButton value="Save" action="{!saveAll}"/>
+            <apex:commandButton value="Save & New" action="{!saveNew}"/>
+            <apex:commandButton value="Cancel" action="{!cancel}"/>
+        </apex:pageBlockButtons>
+        <apex:pageBlockSection columns="2" title="Lead Information" collapsible="false">
+            <apex:outputField value="{!Lead.OwnerId}"/>
+            <apex:inputField value="{!Lead.Lead_Type__c}"/>
+            <apex:inputField value="{!Lead.Phone}"/>
+            <apex:inputField value="{!Lead.Salutation}"/>
+            <apex:inputField value="{!Lead.firstName}"/>
+            <apex:inputField value="{!Lead.fax}"/>
+            <apex:inputField value="{!Lead.lastName}"/>
+             <apex:inputField value="{!Lead.Email}"/>
+            <apex:inputField value="{!Lead.Company}"/>
+            <apex:inputField value="{!Lead.website}"/>
+             <apex:inputField value="{!Lead.title}"/>
+            <apex:inputField value="{!Lead.status}"/>
+            <apex:inputField value="{!Lead.LeadSource}"/>
+            <apex:inputField value="{!Lead.Rating}"/>
+             <apex:inputField value="{!Lead.NumberOfEmployees}"/>
+            <apex:inputField value="{!Lead.Industry}"/>
+            <apex:inputField value="{!Lead.AnnualRevenue}"/>
+            <apex:inputField value="{!Lead.Lead_Score__c}"/>
+            
+            <apex:inputField value="{!Lead.Lead_Star__c}"/>
+         <!--   <apex:inputField value="{!Lead.CampaignId}"/>-->
+           
+           
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="Address Information" columns="1" collapsible="false">
+              <apex:inputField value="{!Lead.Street}"/>
+            <apex:inputField value="{!Lead.City}"/>
+            <apex:inputField value="{!Lead.postalCode}"/>
+            <apex:inputField value="{!Lead.State}"/>
+            <apex:inputField value="{!Lead.Country}"/>
+             
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="Additional Information" columns="2" collapsible="false">
+             <apex:inputField value="{!Lead.ProductInterest__c}"/>
+            <apex:inputField value="{!Lead.CurrentGenerators__c}"/>
+            <apex:inputField value="{!Lead.SICCode__c}"/>
+            <apex:inputField value="{!Lead.Primary__c}"/>
+            <apex:inputField value="{!Lead.NumberofLocations__c}"/>
+        </apex:pageBlockSection>
+         <apex:pageBlockSection title="Description"  collapsible="false">
+             <apex:inputField value="{!Lead.Description}"/>
+            
+        </apex:pageBlockSection>
+        
+    </apex:pageBlock>
+        </apex:form>
+    
+</apex:page>

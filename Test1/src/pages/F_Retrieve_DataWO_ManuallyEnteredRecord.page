@@ -1,0 +1,13 @@
+<apex:page controller="Retrieve_DataWO_ManuallyEnteredRecord" >
+    <apex:form >
+        <apex:pageBlock title="Account Data">
+            <apex:commandButton value="Submit" action="{!add}"/>
+            <apex:pageBlockTable value="{!accounts}" var="A">
+              <apex:column headerValue="Name">
+                    <apex:inputText value="{!A.Name}" />
+                </apex:column>
+                
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

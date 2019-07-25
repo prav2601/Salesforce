@@ -1,0 +1,9 @@
+<apex:page controller="XMLCreation">
+    {!xmlString}<br/><br/>
+    <apex:form >
+  
+    <apex:pageBlock >
+        <apex:commandButton value="Save" action="{!insertData}" />
+    </apex:pageBlock>
+              </apex:form>
+</apex:page>

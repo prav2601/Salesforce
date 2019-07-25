@@ -1,0 +1,37 @@
+<apex:page standardController="Opportunity" recordSetVar="dl">
+    <apex:form >
+       <apex:selectList size="1">
+           <apex:selectOption itemLabel="All Opportunity" itemValue="All Oppotunity" />
+           <apex:selectOption itemLabel="Closing Next Month" itemValue="Closing Next Month" />
+           <apex:selectOption itemLabel="Closing this Month" itemValue="Closing this Month" />
+           <apex:selectOption itemLabel="My Opportunity" itemValue="My Oppotunity" />
+           <apex:selectOption itemLabel="Private" itemValue="Private" />
+         
+        </apex:selectList>&nbsp;&nbsp;
+        <apex:commandLink value="Edit" action="{!URLFOR($Action.Opportunity.Edit)}" />
+        <apex:pageBlock >
+            
+            <apex:commandButton value="New Opportunity"/><br/><br/>
+          
+        <apex:dataTable value="{!dl}" var="a"  cellpadding="10" border="frame">
+            <apex:column >
+                <apex:facet name="header">
+                <apex:inputCheckbox />
+                </apex:facet>
+                <apex:inputCheckbox />
+            </apex:column>
+            <apex:column headerValue="Action" >
+               <apex:commandLink value="Edit" action="{!URLFOR($Action.Opportunity.Edit,a.id)}"/>&nbsp;|&nbsp;
+                <apex:commandLink value="Del" action="{!URLFOR($Action.Opportunity.Delete,a.id)}"/>
+            </apex:column>
+            <apex:column headerValue="Opportunity Name" value="{!a.Name}"/>
+            <apex:column headerValue="Account Name" value="{!a.AccountId}"/>
+            <apex:column headerValue="Amount" value="{!a.Amount}"/>
+            <apex:column headerValue="Close Date" value="{!a.CloseDate}"/>
+            <apex:column headerValue="Stage" value="{!a.StageName}"/>
+            
+        </apex:dataTable>
+            </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

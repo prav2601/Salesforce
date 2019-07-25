@@ -1,0 +1,20 @@
+<aura:component >
+	<lightning:accordion activeSectionName="c">
+        <lightning:accordionSection label="Account" name="a" title="Account">
+            Account Name: <br/>
+            Account Id:<br/>
+        </lightning:accordionSection>
+        <lightning:accordionSection label ="Contact" name="c">
+            Contact Name: <br/>
+            Contact Id:<br/>
+            <aura:set attribute="actions">
+                <lightning:button label="submit"/>
+            </aura:set>
+            
+        </lightning:accordionSection>
+        <lightning:accordionSection label="Opportunity" name="o">
+            Opportuity Name: <br/>
+            Opportunity Id:<br/>
+        </lightning:accordionSection>
+    </lightning:accordion>
+</aura:component>

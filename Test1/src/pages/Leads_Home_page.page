@@ -1,0 +1,35 @@
+<apex:page Controller="Apex_Lead_Home_page" >
+    <apex:sectionHeader title="Leads" subtitle="Home" help="/VF_List_Account"/>
+    <apex:form >
+        <b>View: </b>&nbsp;
+		<apex:selectList size="1">
+            <apex:selectOption itemValue="All Open Leads" itemLabel="All Open Leads"/>
+            <apex:selectOption itemValue="Today's Leads" itemLabel="Today's Leads"/>
+            <apex:selectOption itemValue="My Unread Leads" itemLabel="My Unread Leads"/>
+        </apex:selectList>   &nbsp;&nbsp;
+        <apex:commandButton value="Go" action="{!ListView}"/><br/><br/>
+        <apex:pageBlock title="Recent Leads" tabStyle="Lead">
+            <apex:pageBlockButtons location="Top">
+                <apex:commandButton value="New"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!leadsList}" var="L">
+                    <apex:column value="{!L.Name}" headerValue="Name"/>
+                    <apex:column value="{!L.Company}" headerValue="Company"/>
+                    <apex:column value="{!L.Phone}" headerValue="Phone"/>
+                </apex:pageBlockTable>
+             </apex:pageBlock>
+            <table>
+                <tr>
+                    <td width="720">
+                        <apex:pageBlock title="Reports" tabStyle="Lead">
+                        </apex:pageBlock>
+                    </td>
+                    <td width="720">
+                        <apex:pageBlock title="Summary" tabStyle="Lead">
+                        </apex:pageBlock>
+                    </td>
+                </tr>
+            </table>
+      
+    </apex:form>
+</apex:page>

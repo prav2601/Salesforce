@@ -1,0 +1,10 @@
+<apex:page controller="Unique_Account_Name" >
+    <apex:pageBlock title="Map_opportunity">
+        <apex:pageBlockTable value="{!opty}" var="record">
+            <apex:column value="{!record.AccountId}" headerValue="Account Name"/>
+            <apex:column value="{!record.Name}" headerValue="Opportunity Name"/>
+            
+            
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

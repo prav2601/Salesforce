@@ -1,0 +1,17 @@
+<apex:page standardController="Customer__c">
+    <apex:form >
+        <apex:pageBlock >
+           <apex:pageBlockSection >
+               <apex:pageBlockSectionItem >
+                   <apex:outputLabel value="Phone"/>
+                   <apex:inputText value="{!Customer__c.Phone__c}"/>
+               </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                   <apex:outputLabel value="Name"/>
+                   <apex:inputText value="{!Customer__c.Name__c}"/>
+               </apex:pageBlockSectionItem>
+               <apex:commandButton value="Store" action="{!save}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

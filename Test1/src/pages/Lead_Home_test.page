@@ -1,0 +1,35 @@
+<apex:page >
+    <apex:sectionHeader title="Home" subtitle="Leads" help="/apex/Test" />
+    <apex:form >
+        <apex:pageBlock title="Recent Leads">
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="New"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection columns="3" collapsible="false">
+                <apex:outputLabel value="Name"/>
+				<apex:outputLabel value="Company"/>
+                <apex:outputLabel value="Phone"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection >
+                <apex:pageBlock title="Reports">
+                    Lead Lifetime: <br/>
+                    Leads by Source: <br/>
+                    Bounced Lead: <br/>
+                </apex:pageBlock>
+                <apex:pageBlock title="Summary">
+                    <apex:pageBlockSection >
+                    	<apex:outputLabel value="Interval"/>
+                        <apex:inputText size="20" maxlength="8"/>
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection >
+                <apex:pageBlock title="Tools">
+                    Import Leads: <br/>
+                    Mass Details Lead: <br/>
+                    Transfer Leads:
+                </apex:pageBlock>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

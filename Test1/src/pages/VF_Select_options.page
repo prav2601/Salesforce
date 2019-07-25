@@ -1,0 +1,9 @@
+<apex:page controller="Select_options">
+    <apex:form >
+    <apex:pageBlock title="Select Options">
+        <apex:selectList >
+            <apex:selectOptions value="{!names}" ></apex:selectOptions>
+        </apex:selectList>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

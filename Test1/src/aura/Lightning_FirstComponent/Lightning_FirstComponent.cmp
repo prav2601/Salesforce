@@ -1,0 +1,10 @@
+<aura:component >
+    <aura:attribute name="Name" type="String" />
+    <aura:attribute name="Cost" type="Decimal" default="500.50" />
+    <aura:attribute name="Price" type="Decimal" />
+    <aura:attribute name="Quantity" type="Integer" default="50" />
+    Product Name: {!v.Name}<br/><br/>
+    Product Cost: {!v.Cost}<br/><br/>
+    Product Price: {!v.Price}<br/><br/>
+    Product Quantity: {!v.Quantity} <br/>
+</aura:component>

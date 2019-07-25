@@ -1,0 +1,11 @@
+<apex:page controller="SOQL_Insert_Delete_Query">
+<apex:form >
+<apex:pageBlock title="Contact list">
+    <apex:pageBlockTable value="{!contactList}" var="A">
+        <apex:column value="{!A.Name}" headerValue="Name"/>
+        <apex:column value="{!A.Phone}" headerValue="Phone"/>
+        
+    </apex:pageBlockTable>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

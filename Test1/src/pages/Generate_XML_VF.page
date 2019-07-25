@@ -1,0 +1,62 @@
+<apex:page controller="Generate_XML"  >
+    {!xmlString}
+    <apex:form >
+    <apex:sectionHeader title="Customer" subtitle="New Customer"/>
+    
+        <apex:pageBlock title="Customer Record">
+            
+                <apex:pageBlockButtons location="Top">
+                    <apex:commandButton value="Generate XML" action="{!generateXML}"/>
+                    </apex:pageBlockButtons>
+            <apex:pageBlockButtons location="Bottom" >
+                <apex:commandButton value="Add Payment" action="{!addPayment}" />
+            </apex:pageBlockButtons>
+                    <apex:pageBlockSection >
+                        <apex:pageBlockSectionItem dir="LTR" >
+                            <apex:outputText value="Enter Name"></apex:outputText>
+                             <apex:inputText value="{!custName}"/>
+                        </apex:pageBlockSectionItem>
+                         <apex:pageBlockSectionItem dir="LTR" >
+                            <apex:outputText value="Enter Id"></apex:outputText>
+                             <apex:inputText value="{!custId}" />
+                        </apex:pageBlockSectionItem>
+                         <apex:pageBlockSectionItem dir="LTR" >
+                            <apex:outputText value="Enter Policy"></apex:outputText>
+                             <apex:inputText value="{!custPolicy}" />
+                        </apex:pageBlockSectionItem>
+                         <apex:pageBlockSectionItem dir="LTR" >
+                            <apex:outputText value="Enter Address"></apex:outputText>
+                              <apex:inputText value="{!custAddress}" />
+                        </apex:pageBlockSectionItem> 
+                        <apex:pageBlockSectionItem dir="LTR" >
+                            <apex:outputText value="Enter Phone"></apex:outputText>
+                              <apex:inputText value="{!custPhone}" />
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem dir="LTR" >
+                            <apex:outputText value="Enter No Of payment"></apex:outputText>
+                              <apex:inputText value="{!noOfPayment}" />
+                        </apex:pageBlockSectionItem>
+
+                    </apex:pageBlockSection>
+            
+            <apex:pageBlockSection title="Payment Record" collapsible="false"  >
+                <apex:repeat value="{!wrapperList}" var="id" >
+                    <apex:pageBlockSectionItem dir="LTR" >
+                            <apex:outputText value="Enter Amount"></apex:outputText>
+                             <apex:inputText value="{!id.payAmount}" />
+                        </apex:pageBlockSectionItem>
+                         <apex:pageBlockSectionItem dir="LTR" >
+                            <apex:outputText value="Enter Mode of Transaction"></apex:outputText>
+                              <apex:inputText value="{!id.modeOfTransaction}" />
+                        </apex:pageBlockSectionItem>
+                </apex:repeat>
+                        
+                
+                        
+                    </apex:pageBlockSection>
+            
+                
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

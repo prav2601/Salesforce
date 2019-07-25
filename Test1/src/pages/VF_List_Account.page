@@ -1,0 +1,25 @@
+<apex:page controller="Apex_List_Account" >
+    <apex:form >
+        <apex:pageBlock id="test">
+            <apex:pageBlockButtons location="Top" >
+                <apex:commandButton value="Add" action="{!addEle}" reRender="test"/>
+                <apex:commandButton value="Reset" action="{!resetEle}" reRender="test"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection >
+                Enter Name: <apex:inputText value="{!name}"/>
+                Enter Phone: <apex:inputText value="{!phone}"/>
+                Enter Rating: <apex:inputText value="{!rating}"/>
+                Enter Industry: <apex:inputText value="{!industry}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection >
+                <apex:pageBlockTable value="{!accounts}" var="a">
+                    <apex:column value="{!a.name}" headerValue="Names"/>
+                    <apex:column value="{!a.phone}" headerValue="Phone"/>
+                    <apex:column value="{!a.rating}" headerValue="Rating"/>
+                    <apex:column value="{!a.industry}" headerValue="Industry"/>
+                </apex:pageBlockTable>
+                
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

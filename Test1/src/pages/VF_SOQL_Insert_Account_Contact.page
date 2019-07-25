@@ -1,0 +1,33 @@
+<apex:page controller="SOQL_Insert_Account_Contact">
+    <apex:sectionHeader title="Account" subtitle="New Account"/>
+    <apex:form >
+        <apex:pageMessages />
+        <apex:pageBlock title="Account_Contact">
+            <apex:pageBlockButtons location="Top">
+                <apex:commandButton value="Create Account" action="{!create}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Account">
+                <apex:inputText value="{!acc.Name}"/>
+                <apex:inputText value="{!acc.Industry}"/>
+                <apex:inputText value="{!acc.Phone}"/>
+                <apex:inputText value="{!acc.Rating}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Contact">
+                <apex:dataTable value="{!contactList}" var="a"  cellpadding="10"  width="1000">
+                    <apex:column >
+                        Last Name: <apex:inputText value="{!a.lastName}"/> 
+                    </apex:column>
+                    <apex:column >
+                        First Name: <apex:inputText value="{!a.firstName}"/> 
+                    </apex:column>
+                    <apex:column >
+                        Phone: <apex:inputText value="{!a.Phone}"/> 
+                    </apex:column>
+                    <apex:column >
+                        <apex:commandButton value="Add" action="{!addContact}"/> 
+                    </apex:column>
+                </apex:dataTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

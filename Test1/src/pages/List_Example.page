@@ -1,0 +1,17 @@
+<apex:page controller="List_Example" >
+    <apex:form >
+        <apex:pageBlock title="List"  >
+            <apex:pageBlockButtons location="Top" id="list">
+                <apex:commandButton value="Add" action="{!addEle}" reRender="list"/>
+                
+            </apex:pageBlockButtons><br/>
+            <apex:pageBlockSection columns="3">
+            Name:    <apex:inputText value="{!name}"/>
+            Phone:    <apex:inputText value="{!phone}"/>
+            Industry:    <apex:inputText value="{!industry}"/>
+            </apex:pageBlockSection><br/>
+           
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,44 @@
+<apex:page id="page">
+    <apex:sectionHeader title="Javascript" subtitle="ManadatoryField"/>
+    <script>
+    function callMe(){
+        var name=document.getElementById('page:fm:pb:pbs:pbsI1:Name').value;
+        var age=document.getElementById('page:fm:pb:pbs:pbsI2:Age').value;
+        if(name==''){
+            document.getElementById('page:fm:pb:pbs:err1').innerHTML='Name is required';
+        }
+        else{
+           document.getElementById('page:fm:pb:pbs:err1').innerHTML='';
+            }
+        if(age==''){
+            document.getElementById('page:fm:pb:pbs:err2').innerHTML='Age is required';
+            }
+        else{
+            document.getElementById('page:fm:pb:pbs:err2').innerHTML='';
+            }
+        
+    }
+        
+    </script>
+    
+    <apex:form id="fm">
+        <apex:pageBlock id="pb">
+       
+        <apex:pageBlockButtons id="pbb" location="Top">
+            <apex:commandButton value="Call Me" oncomplete="callMe()" reRender="fm"/>
+        </apex:pageBlockButtons>
+        <apex:pageBlockSection id="pbs">
+            <apex:pageBlockSectionItem id="pbsI1">
+                <apex:outputLabel value="Enter Name"></apex:outputLabel>
+                <apex:inputText id="Name"/>
+            </apex:pageBlockSectionItem>
+            <apex:outputLabel id="err1"/>
+            <apex:pageBlockSectionItem id="pbsI2">
+                <apex:outputLabel value="Enter Age"></apex:outputLabel>
+                <apex:inputText id="Age"/>
+            </apex:pageBlockSectionItem>
+            <apex:outputLabel id="err2"/>
+        </apex:pageBlockSection>
+         </apex:pageBlock>
+    </apex:form>
+</apex:page>

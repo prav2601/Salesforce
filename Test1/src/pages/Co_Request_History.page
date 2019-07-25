@@ -1,0 +1,46 @@
+<apex:page controller="CO_Request_History_New" >
+    <apex:sectionHeader title="CO Request History" subtitle="Edit"/>
+    <apex:form id="pb" >
+       
+            
+        <apex:pageBlock title="Recent CO Request History" >
+            <apex:pageBlockButtons location="Top">
+                <apex:commandButton value="Save" action="{!saveAll}"/>&nbsp;&nbsp;
+                <apex:commandButton value="Reset" action="{!reset}" reRender="pb" />
+               
+                </apex:pageBlockButtons>
+                <apex:pageBlockSection >
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Case Number"/>
+                        <apex:inputText value="{!caseNum}" />
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Co Req Seq"/>
+                        <apex:inputText value="{!coreqseq}" />
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="DOC ID"/>
+                        <apex:inputText value="{!docId}" />
+                    </apex:pageBlockSectionItem>
+               <!--     <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Generate Date"/>
+                        <apex:inputText value="{!generateDate}" />
+                    </apex:pageBlockSectionItem>-->
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="History Switch"/>
+                        <apex:inputText value="{!historySwitch}" />
+                    </apex:pageBlockSectionItem>
+                     <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Indv Id"/>
+                        <apex:inputText value="{!indvid}" />
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Program CD"/>
+                        <apex:inputText value="{!programCd}" />
+                    </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+                
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

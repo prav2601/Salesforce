@@ -1,0 +1,70 @@
+<apex:page controller="Apex_Registration_Form">
+    <apex:form >
+    <apex:outputLabel value="Select Candidate"/>&nbsp;&nbsp;
+    <apex:selectList size="1" value="{!selected}">
+        <apex:selectOption itemLabel="Not Applicable" itemValue="Not Applicable"/>
+        <apex:selectOption itemLabel="Freshers" itemValue="Freshers"/>
+        <apex:selectOption itemLabel="Experienced" itemValue="Experienced"/>
+    </apex:selectList>&nbsp;&nbsp;
+        <apex:commandButton value="GO" action="{!invoke}"/>
+        <apex:commandButton value="Reset" action="{!reset}"/>
+   
+    <apex:pageBlock title="Candidate Details" id="pb">
+        <apex:pageBlockSection >
+            <apex:pageBlockSectionItem >
+            <apex:outputLabel value="Candidate Name"/>
+            <apex:InputText />
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+            <apex:outputLabel value="Candidate DOB"/>
+            <apex:InputText />
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+            <apex:outputLabel value="Candidate Skill"/>
+            <apex:InputText />
+            </apex:pageBlockSectionItem>
+             <apex:pageBlockSectionItem >
+            <apex:outputLabel value="Candidate Qualification"/>
+            <apex:InputText />
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection rendered="{!count=2}" title="Experienced"  collapsible="false">
+            <apex:pageBlockSectionItem >
+            <apex:outputLabel value="Candidate Name"/>
+            <apex:InputText />
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+            <apex:outputLabel value="Candidate DOB"/>
+            <apex:InputText />
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+            <apex:outputLabel value="Year OF Exp"/>
+            <apex:InputText />
+            </apex:pageBlockSectionItem>
+             <apex:pageBlockSectionItem >
+            <apex:outputLabel value="Candidate Qualification"/>
+            <apex:InputText />
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection rendered="{!count=1}" title="Freshers" collapsible="false">
+            <apex:pageBlockSectionItem >
+            <apex:outputLabel value="Candidate Name"/>
+            <apex:InputText />
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+            <apex:outputLabel value="Candidate DOB"/>
+            <apex:InputText />
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+            <apex:outputLabel value="Freshers"/>
+            <apex:InputText />
+            </apex:pageBlockSectionItem>
+             <apex:pageBlockSectionItem >
+            <apex:outputLabel value="Candidate Qualification"/>
+            <apex:InputText />
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+            
+    </apex:pageBlock>
+      </apex:form>
+</apex:page>

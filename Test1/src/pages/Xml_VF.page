@@ -1,0 +1,8 @@
+<apex:page controller="XMLgen">
+    <apex:pageBlock title="XMl String">
+        <apex:form >
+            <apex:outputLabel value="Get Xml String"/>&nbsp;&nbsp;&nbsp;
+            <apex:commandButton value="Submit" action="{!XMLgenAction}"/>
+        </apex:form>
+    </apex:pageBlock>
+</apex:page>
