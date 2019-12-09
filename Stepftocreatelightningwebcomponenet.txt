@@ -1,0 +1,30 @@
+1. Create profile in spring19 release
+2. create your domain deploy to user
+3.install pre-release verison of CLI(Command line interface)(https://sfdc.co/sfdx_cli_win64 )
+4.check sfdx plugins(if not installed then use sfdx force:org:open--to see what is my default org)
+5. write command: sfdx force:auth:web:login -d -a myhuborg(it will open your newly created login page: do login)
+6. check sfdx plugins (version should be minumm 45.0 to create LWC)
+7. write command: sfdx plugins:install salesforcedx@pre-release (after installed check version--it should be 45.0)
+8. create folder on desktop (name should not be aura and lwc)
+9. open that folder from vs code editor
+10.create a pr0ject(sfdx:project)
+11. check the folder structure (force-app, main,default,aura,lwc)
+12.right click on lwc create lwc
+13.copy code from trailhead and paste it respectively
+14.now command to check comnection (sfdx force:org:list)
+15.now to deploy the component(sfdx force:source:deploy -p force-app -u (username)
+16. go to app and check it will be in customer app
+
+
+----push lightening component
+1. create folder on your machine
+2. open folder from vs ..created project (project name--ebikes and create lwc (bikeCard))
+3. update .html,.js,metadata.xml
+
+1. sfdx force:org:create -s -f config/project-scratch-def.json -a ebikes this will create scratch folder in test org and assign the test username test org will be active for some days (probabaly 30). 
+2.now push the code (edited in .html,.js,.metadat.xml)--sfdx force:source:push
+3. authorize your dev hub org --sfdx force:auth:web:login -d -a myhuborg
+4. deploy the project in your dev hub org --sfdx force:source:deploy -p force-app -u psri260192-vze3@force.com
+5. give permission--sfdx force:user:permset:assign -n ebikes -u psri260192-vze3@force.com
+6. now create page you can see the component deployed
+
